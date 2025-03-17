@@ -1,19 +1,22 @@
-import React from 'react'
-import HeaderAdmin from './HeaderAdmin'
-import { Outlet } from 'react-router-dom'
+import React, { useContext } from "react";
+import HeaderAdmin from "./HeaderAdmin";
+import { Navigate, Outlet } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 const LayoutAdmin = () => {
-    return (
-        <>
+  const { user } = useContext(LoginContext);
+  if (user === null) {
+    return <Navigate to="/" replace />;
+  }
+  return (
+    <>
+      <HeaderAdmin />
 
-            <HeaderAdmin />
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
+};
 
-            <main>
-                <Outlet />
-            </main>
-
-        </>
-    )
-}
-
-export default LayoutAdmin
+export default LayoutAdmin;
