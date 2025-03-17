@@ -1,14 +1,21 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <header>
+  return (
+    <header>
+      <nav>
+        <menu>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="admin">ADMIN</NavLink>
+          </li>
+        </menu>
+      </nav>
+    </header>
+  );
+};
 
-            <Navbar />
-
-        </header>
-    )
-}
-
-export default Header
+export default Header;
