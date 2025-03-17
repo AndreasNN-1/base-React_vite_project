@@ -1,14 +1,21 @@
-import React from 'react'
-import NavbarAdmin from './NavbarAdmin'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HeaderAdmin = () => {
-    return (
-        <header>
+  return (
+    <header>
+      <nav>
+        <menu>
+          <li>
+            <NavLink to="admin">ADMIN Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">Forsiden (public)</NavLink>
+          </li>
+        </menu>
+      </nav>
+    </header>
+  );
+};
 
-            <NavbarAdmin />
-
-        </header>
-    )
-}
-
-export default HeaderAdmin
+export default HeaderAdmin;
